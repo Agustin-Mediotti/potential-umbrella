@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
  // Añadir
-const Navbar = (props) => {
+const NavBar = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
@@ -34,5 +34,5 @@ const Navbar = (props) => {
   );
 }
 
-export default Navbar;
+export default NavBar;
 

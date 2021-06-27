@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import NavBar from "./components/NavBar.js"
-import Books from "./components/Books.js"
+import BookList from "./components/BookList.js"
 import {
   HashRouter,
   Route
@@ -18,7 +18,7 @@ class App extends Component {
       <HashRouter>
         <div className="container">
           <Route path="/" exact     component={ NavBar } />
-          <Route path="/firstPage"  component={ NavBar,Books } />
+          <Route path="/firstPage"  component={ BookList } />
         </div>
       </HashRouter>
     );
