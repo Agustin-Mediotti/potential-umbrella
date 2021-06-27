@@ -27,7 +27,7 @@ class App extends Component {
     newBookModal: false,
     editBookModal: false,
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this._refreshBooks();
   }
   toggleNewBookModal() {
