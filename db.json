@@ -1,17 +1,39 @@
 {
   "books": [
     {
+      "id": 1,
       "title": "The Lord of The Rings",
-      "author": "JRR Tolkien",
-      "avaible": "Yes",
-      "id": 1
+      "author": "",
+      "quantity": 1,
+      "avaible": true
+
+    },
+    {
+      "id": 2,
+      "title": "The Lord of The Rings II",
+      "author": "",
+      "quantity": 2,
+      "avaible": false
     }
   ],
-  "comments": [
+  "author": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name" : "JRR Tolkien",
+      "books" : [1,2]
+    } 
+  ],
+  "categories": [
+      {
+        "categories" : ["fantasy"]
+      }
+  ],
+  "person": [
+    {
+      "id": 1,
+      "name": "Vito",
+      "surname": "Mediotti",
+      "telnumber": "2216181121"
     }
   ],
   "profile": {

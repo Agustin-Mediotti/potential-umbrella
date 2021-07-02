@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
-import { Nav, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
- // Añadir
+import React, { useState } from "react";
+import {
+  Nav,
+  NavItem,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu,
+  NavLink,
+} from "reactstrap";
+import BookList from "./BookList";
+// Añadir
 const NavBar = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -10,7 +19,9 @@ const NavBar = (props) => {
     <div>
       <Nav pills>
         <NavItem>
-          <NavLink href="/firstPage" active>Libros</NavLink>
+          <NavLink href="http://localhost:3000/booklist" active>
+            Libros
+          </NavLink>
         </NavItem>
         <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle nav caret>
@@ -32,7 +43,6 @@ const NavBar = (props) => {
       </Nav>
     </div>
   );
-}
+};
 
 export default NavBar;
-

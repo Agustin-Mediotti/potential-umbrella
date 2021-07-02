@@ -11,22 +11,19 @@ import {
   Table,
   Button,
 } from "reactstrap";
-
-// json-server --watch db.json --port 3001
-
 class Books extends Component {
   state = {
     books: [],
     newBookData: {
       title: "",
       author: "",
-      avaible: "",
+      avaible: Boolean,
     },
     editBookData: {
       id: "",
       title: "",
       author: "",
-      avaible: "",
+      avaible: Boolean,
     },
     newBookModal: false,
     editBookModal: false,
@@ -46,7 +43,7 @@ class Books extends Component {
   }
   addBook() {
     axios
-      .post("http://localhost:3001/books", this.state.newBookData)
+      .post("http://localhost:3001/booklist", this.state.newBookData)
       .then((response) => {
         let { books } = this.state;
 
@@ -58,7 +55,7 @@ class Books extends Component {
           newBookData: {
             title: "",
             author: "",
-            avaible: "",
+            avaible: Boolean,
           },
         });
       });
@@ -67,7 +64,7 @@ class Books extends Component {
     let { title, author, avaible } = this.state.editBookData;
 
     axios
-      .put("http://localhost:3001/books/" + this.state.editBookData.id, {
+      .put("http://localhost:3001/booklist/" + this.state.editBookData.id, {
         title,
         author,
         avaible,
@@ -77,7 +74,12 @@ class Books extends Component {
 
         this.setState({
           editBookModal: false,
-          editBookData: { id: "", title: "", author: "", avaible: "" },
+          editBookData: {
+            id: "",
+            title: "",
+            author: "",
+            avaible: Boolean,
+          },
         });
       });
   }
@@ -88,12 +90,12 @@ class Books extends Component {
     });
   }
   deleteBook(id) {
-    axios.delete("http://localhost:3001/books/" + id).then((response) => {
+    axios.delete("http://localhost:3001/booklist/" + id).then((response) => {
       this._refreshBooks();
     });
   }
   _refreshBooks() {
-    axios.get("http://localhost:3001/books").then((response) => {
+    axios.get("http://localhost:3001/booklist").then((response) => {
       this.setState({
         books: response.data,
       });
